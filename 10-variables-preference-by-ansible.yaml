@@ -4,8 +4,8 @@
   vars:
     Associate: "Arun from Play level"
     jobtitle: "Software Engineer from Play level"
-  vars_files:
-  - variables.yaml
+  # vars_files:
+  # - variables.yaml
   vars_prompt:
   - name: Associate
     prompt: Prompt Level Pls enter Your Name
