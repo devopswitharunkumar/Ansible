@@ -1,9 +1,9 @@
 - name: Variables preference check by ansible
   hosts: web
   become: yes
-  vars:
-    Associate: "Arun from Play level"
-    jobtitle: "Software Engineer from Play level"
+  # vars:
+  #   Associate: "Arun from Play level"
+  #   jobtitle: "Software Engineer from Play level"
   # vars_files:
   # - variables.yaml
   # vars_prompt:
