@@ -1,0 +1,9 @@
+- name: Variables from task level
+  hosts: web
+  become: yes
+  tasks:
+  - name: Variables from task level
+    vars:
+      course: "DevOps with Azure"
+    ansible.builtin.debug:
+      msg: "Hi, Im learning {{course}} and Duration is {{Duration}} with Trainer {{Trainer}}"
