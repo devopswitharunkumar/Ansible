@@ -1,0 +1,23 @@
+- name: play1 and task1
+  hosts: web
+  become: yes
+  tasks:
+  - name: install git 
+    ansible.builtin.package:
+      name: git
+      state: present
+
+- name: play2 and task2
+  hosts: localhost
+  tasks:
+  - name: install mysql
+    ansible.builtin.package:
+      name: mysql
+      state: present
+
+- name: Play3 and task3
+  hosts: web
+  tasks:
+  - name: debug
+    ansible,builtin.debug:
+      msg: "Hi Im learning ansible"
