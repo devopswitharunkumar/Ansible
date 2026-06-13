@@ -6,13 +6,13 @@
     jobtitle: "Software Engineer from Play level"
   # vars_files:
   # - variables.yaml
-  vars_prompt:
-  - name: Associate
-    prompt: Prompt Level Pls enter Your Name
-    private: false
-  - name: jobtitle
-    prompt: Prompt Level Pls Enter Your jobtitle
-    private: false # or true
+  # vars_prompt:
+  # - name: Associate
+  #   prompt: Prompt Level Pls enter Your Name
+  #   private: false
+  # - name: jobtitle
+  #   prompt: Prompt Level Pls Enter Your jobtitle
+  #   private: false # or true
   tasks:
   - name: variables preference check by ansible
     vars:
