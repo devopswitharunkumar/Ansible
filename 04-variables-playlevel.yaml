@@ -2,7 +2,7 @@
   hosts: web
   become: yes
   vars:
-    course: "DevOps with AWS"
+    course: "DevOps with AWS from play level"
     Duration: "6 months"
     Trainer: "Shiva kumar"
   tasks:

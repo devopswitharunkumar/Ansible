@@ -1,9 +1,7 @@
-- name: Variables from files
+- name: variables from inventory
   hosts: web
   become: yes
-  vars_files:
-    - variables.yaml # it will take variables from variables file
   tasks:
-  - name: Variables from files
+  - name: Variables from inventory
     ansible.builtin.debug:
       msg: "Hi, I'm learning {{course}} and Duration is {{Duration}} and Trainer is {{Trainer}}"
