@@ -15,8 +15,8 @@
   #   private: false # or true
   tasks:
   - name: variables preference check by ansible
-    vars:
-      # Associate: "Arun from Task level"
-      # jobtitle: "Software Engineer from Task level"
+    # vars:
+    #   # Associate: "Arun from Task level"
+    #   # jobtitle: "Software Engineer from Task level"
     ansible.builtin.debug:
       msg: "Hello {{Associate}}, Your Job Title is {{jobtitle}}"
