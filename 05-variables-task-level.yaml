@@ -1,6 +1,10 @@
 - name: Variables from task level
   hosts: web
   become: yes
+  vars:
+    course: "DevOps with AWS"
+    Trainer: "Shiva kumar"
+    Duration: "6 Months"
   tasks:
   - name: Variables from task level
     vars:
