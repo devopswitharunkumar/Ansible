@@ -5,3 +5,5 @@
   - name: Variables from inventory
     ansible.builtin.debug:
       msg: "Hi, I'm learning {{course}} and Duration is {{Duration}} and Trainer is {{Trainer}}"
+
+#no need to mention inventory file in this it will automatically check in that file by default
