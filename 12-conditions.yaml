@@ -1,0 +1,22 @@
+- name: Conditions
+  hosts: web
+  become: yes
+
+  tasks:
+
+  - name: Check roboshop user exist or not
+    ansible.builtin.command: id roboshop_user #if there is no module for any command we can use this to execute like command
+    register: user                            #user is a variable name to store id
+    ignore_errors: true                       #if it is true even if pgrm have error it wont exit it will run the total program/task
+
+
+  - name: Print exit status
+    ansible.builtin.debug:
+      msg: "Exit status is {{ user.rc }}"
+
+
+  - name: Create user
+    ansible.builtin.user:
+      name: roboshop_user
+      state: present
+    when: user.rc != 0                       #if user present it will return 0 so i=create user task will be skipped if 1 create user task executes 

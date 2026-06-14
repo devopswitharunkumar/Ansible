@@ -1,0 +1,44 @@
+- name: Loops to create user
+  hosts: web
+  become: yes
+  tasks:
+  - name: Check user exists or not 
+    ansible.builtin.command: id "{{item}}"
+    loop:
+    - Arun
+    - kumar
+    - Reddy
+    - Narupalle
+    register: user
+    ignore_errors: true
+  - name: Print exit status
+    ansible.builtin.debug:
+      msg: "{{ item.item }} Exit status is {{item.rc}}"  #Now user does NOT have: user.rc directly Because multiple results are stored.
+    loop: "{{user.results}}"
+  - name: Create missing user
+    ansible.builtin.user:
+      name: {{ item.item }}
+      state: present
+    loop: "{{user.results}}"
+    when: item.rc != 0 
+
+
+
+# or But in real Ansible we normally don't do this because user module is already idempotent.
+
+# ---
+# - name: create users
+#   hosts: web
+#   become: yes
+
+#   tasks:
+
+#   - name: create multiple users
+#     ansible.builtin.user:
+#       name: "{{ item }}"
+#       state: present
+
+#     loop:
+#       - arun
+#       - ramesh
+#       - suresh
