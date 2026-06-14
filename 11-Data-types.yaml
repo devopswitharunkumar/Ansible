@@ -1,0 +1,20 @@
+- name: Datatypes example
+  hosts: web
+  become: yes
+  vars:
+    Name: "Shiva" # shiva or "Shiva" but if u give space in bw name like shiva kumar it must be in double quotes
+    Year : 1998
+    SofwareEngineer: true
+    Skills:
+    - DevOps
+    - AWS
+    - Java
+    - Sql
+    Exp:
+      DevOps: 10
+      AWS: 12
+      JAva: 2
+      Sql: 1
+  tasks: Check data types
+  ansible.builtin.debug:
+    msg : "He is {{Name}} and he born in {{Year}} and Skills are {{Skills}} and Exp in {{Exp}} and he is a Software Engineer {{SofwareEngineer}}"
